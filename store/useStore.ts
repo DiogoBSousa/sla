@@ -15,12 +15,12 @@ interface AppState extends PoseState {
 const initialRotations: Record<string, Vector3> = {
   neck: { x: 0, y: 0, z: 0 },
   spine: { x: 0, y: 0, z: 0 },
-  shoulderL: { x: 0, y: 0, z: -0.2 },
-  shoulderR: { x: 0, y: 0, z: 0.2 },
+  shoulderL: { x: 0, y: 0, z: 0 },
+  shoulderR: { x: 0, y: 0, z: 0 },
   elbowL: { x: 0, y: 0, z: 0 },
   elbowR: { x: 0, y: 0, z: 0 },
-  hipL: { x: 0.1, y: 0, z: 0 },
-  hipR: { x: 0.1, y: 0, z: 0 },
+  hipL: { x: 0, y: 0, z: 0 },
+  hipR: { x: 0, y: 0, z: 0 },
   kneeL: { x: 0, y: 0, z: 0 },
   kneeR: { x: 0, y: 0, z: 0 },
 };
@@ -45,9 +45,9 @@ export const useStore = create<AppState>((set) => ({
     shoes: true,
   },
   lightSettings: {
-    intensity: 1.5,
+    intensity: 2.0,
     color: '#ffffff',
-    position: { x: 5, y: 5, z: 5 },
+    position: { x: 5, y: 8, z: 5 },
   },
   isAgeVerified: false,
 
@@ -65,5 +65,5 @@ export const useStore = create<AppState>((set) => ({
     lightSettings: { ...state.lightSettings, intensity }
   })),
   setAgeVerified: (isAgeVerified) => set({ isAgeVerified }),
-  resetPose: () => set({ rotations: initialRotations }),
+  resetPose: () => set({ rotations: { ...initialRotations } }),
 }));
