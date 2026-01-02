@@ -1,0 +1,7 @@
+{
+  "name": "Artist Pose Studio",
+  "description": "Professional 3D human pose reference tool for digital artists, illustrators, and game designers. Create, customize, and export realistic anatomical poses.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
